@@ -30,6 +30,7 @@ document.querySelector('button').addEventListener('click', ()=>{
         if(xhr.readyState === 4 && xhr.status === 200){
             const postArray = JSON.parse(xhr.response);
             console.log(postArray);
+            // myFunction(postArray);
             // console.log(JSON.parse(xhr.responseText));
             // console.log(xhr.responseText);
         }
@@ -47,6 +48,7 @@ document.querySelector('button').addEventListener('click', ()=>{
 });
 
 
+// Displaying the data in the webpage
 
 // const content  = document.getElementsByClassName('container')[0];
 

@@ -23,16 +23,17 @@ String methods
 
 // Back-Tics Syntax
 
-Str=`balaji is 
-my name i am
-from coimbatore`;
+// It will print as
+// Str=`balaji is 
+// my name i am
+// from coimbatore`;
 
-console.log(Str);
+// console.log(Str);
 
 // Interpolation syntax --> {...}
 
-let text = `
-    s1 : ${str1}
-    s2 : ${str2}
-`;
-console.log(text);
+// let text = `
+//     s1 : ${str1}
+//     s2 : ${str2}
+// `;
+// console.log(text);
