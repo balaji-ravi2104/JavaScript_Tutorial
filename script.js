@@ -16,7 +16,7 @@
 
 
 //  map will return a value
-// let b= a .map((element,index) => {
+// let b= a.map((element,index) => {
 //     // console.log(element,index);
 //     return element*2;
 // });
@@ -84,3 +84,66 @@
 // var x;
 // console.log(x);
 // x=20;
+
+
+// let bigInt = 12345739282634929n
+// console.log(bigInt)
+// console.log(typeof(decimal))
+// console.log(typeof(octal))
+// console.log(typeof(bigInt))
+// let largest = 1.7 * 10**308
+// console.log(largest)
+// let anotherMax = Number.MAX_VALUE   //is it really maximum number ?
+// console.log(anotherMax)
+// anotherMax += 1
+// console.log(anotherMax)
+// console.log(typeof(anotherMax))
+
+
+// for(var i = 0; i < 10; i++){}
+// console.log(i)
+
+// for(let j = 0; j < 10; j++){}
+// console.log(j) 
+// ReferenceError :j is not defined
+
+
+// var x=10;
+// console.log(x); //10
+// {
+//     var x=100;
+// }
+// console.log(x); //100
+
+
+// let num = 20;
+
+// {
+//     let num = 100;
+//     console.log(num);
+// }
+
+// local variables affecting global variables.
+
+
+// console.log(num);
+
+// console.log(data); //unefined
+// var data = 100;
+
+
+// console.log(num);//error Cannot access 'num' before initialization
+// let num = 10;
+
+
+// const data = {
+//     value : 100
+// }
+
+// console.log(data.value);
+
+// data.value = 200; In const we can reasign a value bu we can't able to redeclare it
+
+// console.log(data.value);
+
+// data={} //TypeError: Assignment to constant variable.

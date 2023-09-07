@@ -25,3 +25,7 @@ if(p===q){
 }else{
     console.log("false");
 }
+
+
+console.log(Math.max()); //-Infinity
+console.log(Math.min()); // Infinity

@@ -1,6 +1,7 @@
 // function clickFunction(){
 //     console.log("Hello");
 // }
+
 // function keypress(e){
 //     if(e.code === "Enter")
 //         console.log(e.target.value); 

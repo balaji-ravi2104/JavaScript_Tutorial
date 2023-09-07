@@ -12,15 +12,15 @@
 
 
 
-// const url = "http://worldtimeapi.org/api/timezone/Asia/Kolkata";
+const url = "http://worldtimeapi.org/api/timezone/Asia/Kolkata";
 
-// async function getData(){
-//     const res = await fetch(url);
-//     const data = await res.json();
-//     console.log(data);
-// }
+async function getData(){
+    const res = await fetch(url);
+    const data = await res.json();
+    console.log(data);
+}
 
-// getData();
+getData();
 
 
 // fetch('https://official-joke-api.appspot.com/jokes/programming/random')

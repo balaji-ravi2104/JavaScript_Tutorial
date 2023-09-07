@@ -21,7 +21,7 @@
 // 500 : "Internal Server Error"
 
 
-document.querySelector('button').addEventListener('click', ()=>{
+document.querySelector('#btn').addEventListener('click', ()=>{
 
     let xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function(){
@@ -47,6 +47,9 @@ document.querySelector('button').addEventListener('click', ()=>{
 
 });
 
+// AJAX.js
+
+
 
 // Displaying the data in the webpage
 
@@ -71,3 +74,5 @@ document.querySelector('button').addEventListener('click', ()=>{
 //     }
 //     xhr.open('GET',"https://jsonplaceholder.typicode.com/photos", true);
 //     xhr.send();
+
+// console.log("Hello");

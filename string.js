@@ -17,6 +17,7 @@ String methods
 // console.log(str1.search("R"));
 // console.log(str1.substring(3,7));
 
+
 /*
     JavaScript Template Literals
 */

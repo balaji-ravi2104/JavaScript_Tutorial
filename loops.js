@@ -7,7 +7,7 @@
 const array = [1,3,5,7,9,4];
 // forEach example
 
-// array.forEach((element)=> console.log(element));
+array.forEach((element)=> console.log(element));
 // element with index position
 // array.forEach((element,index) => console.log(element,index));
 
