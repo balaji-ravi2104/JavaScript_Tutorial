@@ -3,7 +3,7 @@
 // Storage Management
 // ==========================================================
 // Local Storage, Session Storage
-//  - Local storage is persistent storage of browser.
+//  - Local storage is persistent storage of browser. 
 //  - Session storage is temporary storage of browser, till
 //    that session only.
 //  - We can store data in the form of key and value pairs.
