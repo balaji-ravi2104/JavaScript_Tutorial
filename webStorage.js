@@ -20,18 +20,34 @@
 // Setting values in local storage
 // If we want to use sessionStorage then replace localStorage with sessionStorage
 
+// function setItem(){
+//   window.localStorage.setItem('user',document.getElementById('uname').value)
+//   document.getElementById('stat').innerHTML='Item Set'
+// }
+// function getItem(){
+//   let info = window.localStorage.getItem('user')
+//   console.log(info);
+//   if(info == null)
+//       info = 'Empty Storage'
+//   document.getElementById('stat').innerHTML=info
+// }
+// function removeItem(){
+//   window.localStorage.removeItem('user')
+//   document.getElementById('stat').innerHTML='Item Removed'
+// }
+
 function setItem(){
-  window.localStorage.setItem('user',document.getElementById('uname').value)
+  window.sessionStorage.setItem('user',document.getElementById('uname').value)
   document.getElementById('stat').innerHTML='Item Set'
 }
 function getItem(){
-  let info = window.localStorage.getItem('user')
+  let info = window.sessionStorage.getItem('user')
   console.log(info);
   if(info == null)
       info = 'Empty Storage'
   document.getElementById('stat').innerHTML=info
 }
 function removeItem(){
-  window.localStorage.removeItem('user')
+  window.sessionStorage.removeItem('user')
   document.getElementById('stat').innerHTML='Item Removed'
 }
