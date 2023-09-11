@@ -1,26 +1,37 @@
-// sessionStorage.setItem("name","balaji");
+// /*
+// ==========================================================
+// Storage Management
+// ==========================================================
+// Local Storage, Session Storage
+//  - Local storage is persistent storage of browser.
+//  - Session storage is temporary storage of browser, till
+//    that session only.
+//  - We can store data in the form of key and value pairs.
+//  - It supports only string data.(to store objects stringify them)
+//  - Keys are unique
+//  - All functions are common for local and session storage.
+//  - setItem() function is used to store item.
+//  - getItem() function is used to read item.
+//  - removeItem() function is used to delete item.
+//  - localStorage and sessionStorage belong to 'window' object.
+// */
 
 
-localStorage.setItem("name","balaji");
+// Setting values in local storage
+// If we want to use sessionStorage then replace localStorage with sessionStorage
 
-const temp = document.getElementById("demo")
-temp.innerHTML = localStorage.getItem("name");
-
-const myObj = {
-    name : "Ravi",
-    myArray : ["balaji","ravi","baby","nirmal"],
-    // logName : function(){
-    //     console.log(this.name);
-    // }
-    dept : "cce"
-};
-
-localStorage.setItem("myObjValue",JSON.stringify(myObj));
-
-const myData = JSON.parse(localStorage.getItem("myObjValue"));
-
-console.log(myData);
-
-console.log(localStorage.key(0));
-
-// localStorage.removeItem("name");
+function setItem(){
+  window.localStorage.setItem('user',document.getElementById('uname').value)
+  document.getElementById('stat').innerHTML='Item Set'
+}
+function getItem(){
+  let info = window.localStorage.getItem('user')
+  console.log(info);
+  if(info == null)
+      info = 'Empty Storage'
+  document.getElementById('stat').innerHTML=info
+}
+function removeItem(){
+  window.localStorage.removeItem('user')
+  document.getElementById('stat').innerHTML='Item Removed'
+}
