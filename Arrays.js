@@ -5,12 +5,14 @@ const fruits = ['apple', 'banana', 'cherry', 'date', 'fig'];
 // console.log(array1[0]);
 // console.log(array1[11]); undefined
 
+
 /*
-Concat --> array.concat(arr1,arr2,....,arrn)  
+// Concat --> array.concat(arr1,arr2,....,arrn)  
 const result = array1.concat(array2);
 const result = array1.concat(99,98,97);
 console.log(result); 
 */
+
 
 /*
 every --> array.every(callback(currentvalue,index,arr),thisArg)   
@@ -75,17 +77,26 @@ for(let x in array1){
 }
 */
 
-
 /*
+
 // indexOf --> array.indexOf(element,index)  
 // If index not found return -1
 // index -> It represent the index position from where search starts. It is optional.
-const result = array3.indexOf(2);
-const result = array3.indexOf(2,1);
-const result = array2.indexOf(1);
-console.log(result);
-*/
+// const result = array3.indexOf(2);
+// const result = array3.indexOf(2,1);
+// const result = array2.indexOf(1);
+// console.log(result);
 
+// remove duplicates elements from array usind indexOf() method
+console.log(array3.filter((element,index)=>{
+    return array3.indexOf(element) == index;
+}));
+
+// By using Set method
+let myset = [ ... new Set(array3)]
+console.log(myset);
+
+*/
 
 /*
 // lastIndexOf --> array.lastIndexOf(element,index)  
@@ -94,12 +105,25 @@ console.log(result);
 */
 
 
+
 /*
-// jojn --> array.join(separator)  --> it return a new string
-const result = array1.join('-');
-console.log(typeof(result)); --> string
+// join --> array.join(separator)  --> array to string
+// default separator is ,
+const result = array1.join('-'); // 1-2-3-4-5-6-7-8-9-10
+const result1 = array2.join(" "); // 11 21 31 41 51 61
+console.log(typeof(result)); //--> string
 console.log(result);
+console.log(result1);
 */
+
+
+/*
+// form -->  Array.form(string) --> string to array
+let str = "Balaji"
+console.log(Array.from(str)); // [ 'B', 'a', 'l', 'a', 'j', 'i' ]
+*/
+
+
 
 /*
 map --> array.map(callback(element,index,arr),thisArg)  --> This function is used to manipulate each and every element in array and it returns an array 
@@ -187,12 +211,17 @@ const reverseArray = array1.reverse();
 console.log(reverseArray);
 */
 
+
 /*
 // slice --> array.slice(start,end) -->  return values between start-index to end-index(excluded)
-const arr = array2.slice(2,5);
-const arr = array3.slice(-5,-1);
+// const arr = array2.slice(2,5); //[ 31, 41, 51 ]
+// const arr = array3.slice(5); // [ 7, 9, 2, 9, 0 ]
+// const arr = array3.slice(5,-1); // [ 7, 9, 2, 9 ]
+// const arr = array3.slice(5,-5); // []
 console.log(arr);
 */
+
+
 
 /*
 // some --> array.some(callback_funct(element, index, array), thisArg); --> if any one element in the array satisfies the condition then it will return true, otherwise false.
@@ -234,7 +263,7 @@ console.log(array1.includes(20)); // false
 */
 
 /*
-// 16. splice --> array.splice(start,delete,element1,element2,?,elementn)  
+//  splice --> array.splice(start,delete,element1,element2,?,elementn)  
 // The JavaScript array splice() method is used to add/remove the elements to/from the existing array. 
 // It returns the removed elements from an array. The splice() method also modifies the original array.
 // We can use negative index as well using -1
@@ -251,29 +280,202 @@ const result = array.splice(3); // remove all elements from index 3
 console.log(result);
 */
 
+/*
+// fill --> arr.fill(value[, start[, end]])  
+num = new Array(100);
+num.fill("Balaji");
+console.log(num);
+const result = array1.fill('balaji',3);
+const result = array1.fill('balaji',3,6);
+ console.log(result);
+*/
 
-// 17. fill --> arr.fill(value[, start[, end]])  
-// num = new Array(100);
-// num.fill("Balaji");
-// console.log(num);
-//  const result = array1.fill('balaji',3);
-// const result = array1.fill('balaji',3,6);
-//  console.log(result);
 
+
+/*
 // 18. delete - return true or false based on the values in the array
-// console.log(delete array1[3]);
-// console.log(array1);
+// element deleted but memory not released
 
+console.log(delete array1[3]);
+console.log(array1);
+console.log(array1[3]); // undefined
+console.log(array1.length); // 10 --> length reamins same but item removed 
+*/
 
-// 19. sort --> array.sort(compareFunction)  
-// const result = array3.sort();
-// const result = array3.sort((a,b)=>b-a);
-// const result = array2.sort().reverse();
-// console.log(result);
+/*
+//  sort --> array.sort(compareFunction)  
+const result = array3.sort(); 
+const result = array3.sort((a,b)=>b-a);
+const result = array2.sort().reverse();
+console.log(result);
+
+console.log(array3.sort((num1, num2) => {
+	return num1 - num2
+})) 	
+console.log(array3.sort((num1, num2) => {
+	return num2 - num1
+})) 
+*/
+
 
 // 20. toString --> array.toString()  
 
 // const result = fruits.toString();
 // console.log(result);
 
+
+/*
+// findIndex() -->  - it is used to find index of particular element
+
+let idx = array1.findIndex((element,index)=>{
+    return element == 3;
+})
+console.log(idx);
+
+//before deleting --> 3
+console.log(array1);
+
+array1.splice(idx,1);
+
+// after deleting --> 3
+console.log(array1);
+
+let key = 4;
+array1.splice(array1.findIndex((element,index)=>{
+    return element ==key;
+}),1);
+
+// after deleting --> key
+console.log(array1);
+
+let temp = [
+    {p_id : 111},
+    {p_id : 1111},
+    {p_id : 222},
+    {p_id : 333}
+]
+
+console.log(temp);
+
+temp.splice(temp.findIndex((element,index)=>{
+    return element.p_id == 1111;
+}),1);
+
+console.log(temp);
+*/
+
+
+/*
+// array.copyWithin(target, start, end)
+
+console.log(array1);
+console.log(array1.copyWithin(2));  // [1,2,1,2,3,4,5,6,7,8]
+console.log(array1.copyWithin(5)); // [1,2,3,4,5,1,2,3,4,5]
+console.log(array1.copyWithin(2,5)); //[1,2,6,7,8,9,10,8,9,10]
+console.log(array1.copyWithin(2,4,6)); //[1,2,5,6,5,6,7,8,9,10]
+*/
+
+
+/*
+//length  --> used to find the length of an array
+
+console.log(array1); 
+console.log(array1.length); // 10
+console.log(array1[4]); //5
+console.log(array1[array1.length]); // undefined
+
+array1.length = 3;
+
+console.log(array1); // [1,2,3]
+
+array1.length = 5;
+
+console.log(array1); // [ 1, 2, 3, <2 empty items> ]
+*/
+
+/*
+    flat() --> array.flat(numberOfTimes) --> 
+let arr = [1, [2], [3], [4, [5]]]
+console.log(arr)    	//[ 1, [ 2 ], [ 3 ], [ 4, [ 5 ] ] ]
+console.log(arr.flat(1))
+console.log(arr.flat(2))
+
+//if we dont know level
+let arr2 = [1,[[[[2]]]],[3],[[[[[[[[[[[[[[[[[[[[[4]]]]]]]]]]]]]]]]]]]]]]
+console.log(arr2.flat(Infinity))
+*/
+
+/*
+// flatMap() :- combination of flat() and map()
+
+let a1=[1,2,3]
+let a2=['one','two','three']
+console.log(a1.map((element,index)=>{
+    return [element,a2[index]]
+})); // [ [ 1, 'one' ], [ 2, 'two' ], [ 3, 'three' ] ]
+console.log(a1.flatMap((element,index)=>{
+    return [element,a2[index]]
+})); // [ 1, 'one', 2, 'two', 3, 'three' ]
+*/
+
+/*
+//  entries() :- object to array
+
+const array = ["a", "b", "c"];
+const iterator = array.entries();
+
+for (const entry of iterator) {
+  console.log(entry);
+} 
+/* OP
+[ 0, 'a' ]
+[ 1, 'b' ]
+[ 2, 'c' ]
+*/
+
+
+/*
+// fromEntries():- array to object
+const keyValuePairs = [
+    ["name", "John"],
+    ["age", 30],
+    ["city", "New York"]
+  ];
+  
+const obj = Object.fromEntries(keyValuePairs);
+  
+console.log(obj); // { name: 'John', age: 30, city: 'New York' }
+*/  
+
+
+/*
+// split() string.split(seperator,limit)--> spilt the string by using the given seperator
+
+let str = "Welcome to javascript"
+console.log(str);
+console.log(str.split(""));
+console.log(str.split(" "));
+console.log(str.split("a",2)); 
+*/
+
+/*
+// substring --> string.substring(startIndex, endIndex);
+const originalString = "Hello, World!";
+const substring = originalString.substring(7, 12); // Extracts "World"
+console.log(substring);
+*/
+
+
+/*
+// trim() --> string.trim()
+
+let stringWithWhitespace = "   Hello, World!   ";
+console.log(stringWithWhitespace.length); // 19
+// stringWithWhitespace = stringWithWhitespace.trim();
+console.log(stringWithWhitespace); // Output: "Hello, World!"
+console.log(stringWithWhitespace.trimStart()); //Hello, World!
+console.log(stringWithWhitespace.trimStart().length); // 16
+console.log(stringWithWhitespace.trimEnd()); //   Hello, World!
+console.log(stringWithWhitespace.trimEnd().length); // 16
+*/
 
